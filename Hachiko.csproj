@@ -8,7 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NetCord" Version="1.0.0-alpha.413" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+    <PackageReference Include="NetCord" Version="1.0.0-alpha.414" />
+    <PackageReference Include="NetCord.Hosting" Version="1.0.0-alpha.414" />
+    <PackageReference Include="NetCord.Hosting.AspNetCore" Version="1.0.0-alpha.414" />
+    <PackageReference Include="NetCord.Hosting.Services" Version="1.0.0-alpha.414" />
+    <PackageReference Include="NetCord.Services" Version="1.0.0-alpha.414" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
