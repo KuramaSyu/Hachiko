@@ -14,12 +14,16 @@ public class AnimeModule : ApplicationCommandModule<ApplicationCommandContext>
         animes["naruto"] = "naruto is an anime";
         if (animes.TryGetValue(name, out string? animeresponse))
         {
-            await Context.Interaction.SendResponseAsync(InteractionCallback.Message(animeresponse));
+            var embed = new EmbedProperties()
+            {
+                Title = $"{name}",
+                Description = animeresponse
+            };
+            await Context.Interaction.SendResponseAsync(InteractionCallback.Message(new() { Embeds = [embed] }));
         }
         else
         {
             await Context.Interaction.SendResponseAsync(InteractionCallback.Message($"Anime {name} not found"));
         }
     }
-
 }
